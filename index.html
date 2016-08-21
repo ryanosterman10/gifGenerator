@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Random GIFs</title>
-	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"/> -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Random GIFs</title>	
 </head>
 
 
 <body>
 
-<div class="container">
+	<div id="buttons">
+		<button data-smash="link">link</button>
+		<button data-smash="mario">mario</button>
+		<button data-smash="luigi">luigi</button>
+		<button data-smash="dk">dk</button>
+		<button data-smash="bowser">bowser</button>
+	</div>
+
+	<div id="gifsAppearHere"></div>
+
+
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+	
+	$('button').on('click', function(){
+		var smash = $(this).data('smash');
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + smash + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+		$.ajax({
+			url: queryURL,
+			method: 'GET'
+		})
+
+		.done(function(response){
+
+			console.log(queryURL);
+			console.log(response);
+
+			var results = response.data;
+
+			for(var i = 0; i < results.length; i++){
+				var smashDiv = $('<div>');
+				var p = $('<p>').text(results[i].rating);
+				var smashImage = $('<img>');
+				smashImage.attr('src', results[i].images.fixed_height.url);
+				smashDiv.append(p);
+				smashDiv.append(smashImage);
+
+				$('#gifsAppearHere').prepend(smashDiv);
+			}
+		});
+
+	}); 
+	
+
+</script>
 
 </body>
 </html>
