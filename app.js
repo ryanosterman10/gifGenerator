@@ -1,4 +1,4 @@
-var topics = ['Peach', 'Pikachu', 'Samus', 'Mario', 'Luigi'];
+var topics = ['Awkward', 'Hungry', 'Tired', 'Sad', 'Hungry'];
 
 function displayGifInfo(){
 
@@ -18,8 +18,8 @@ function displayGifInfo(){
 			var p = $('<p>').text("Rating: " + rating);
 			var topicsImage = $('<img>');
 			topicsImage.attr('src', results[i].images.fixed_height.url);
-			gifDiv.append(p);
 			gifDiv.append(topicsImage);
+			gifDiv.append(p);
 			$('#gifsView').prepend(gifDiv);
 		}
 

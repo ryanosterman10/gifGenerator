@@ -1,5 +1,6 @@
 body{
-	background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);
+	/*background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);*/
+	background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-11.jpg);
 	background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -11,14 +12,29 @@ body{
 	font-weight: bolder;
 	color: white;
 	margin: 5px;
+	border: 3px solid white;
 	border-radius: 5px;
 	background-image: url(https://media.giphy.com/media/9yMqaMRMMB1IY/giphy.gif);
 }
 
 .gif:hover{
-	border: 2px solid black;
+	border-color: black;
 }
 
 div.container.well.text-center{
 	margin-bottom: 100px;
 }
+
+#gif-input{
+	margin-bottom: 30px;
+}
+
+/*#addGif{
+	font-size: 3em;
+	font-weight: bolder;
+	color: skyblue;
+	margin: 5px;
+	border: 3px solid white;
+	border-radius: 5px;
+	background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);
+}*/
