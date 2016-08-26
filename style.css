@@ -27,14 +27,20 @@ div.container.well.text-center{
 
 #gif-input{
 	margin-bottom: 30px;
+	font-size: 3em;
+	border-radius: 5px;
 }
 
-/*#addGif{
+#addGif{
 	font-size: 3em;
-	font-weight: bolder;
-	color: skyblue;
-	margin: 5px;
-	border: 3px solid white;
 	border-radius: 5px;
-	background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);
-}*/
+	margin-left: 10px;
+	color: black;
+	/*background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);*/
+}
+
+img{
+	border: 3px solid white;
+	border-radius: 10px;
+}
+

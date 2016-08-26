@@ -1,4 +1,6 @@
-var topics = ['Awkward', 'Hungry', 'Tired', 'Sad', 'Hungry'];
+$(document).ready(function(){
+
+var topics = ['Awkward', 'Hungry', 'Tired', 'Sad', 'Bored'];
 
 function displayGifInfo(){
 
@@ -12,12 +14,24 @@ function displayGifInfo(){
 
 		var results = response.data;
 
+		console.log(results);
+
 		for(var i = 0; i < results.length; i++){
 			var gifDiv = $('<div class="item">')
 			var rating = results[i].rating;
 			var p = $('<p>').text("Rating: " + rating);
+			p.addClass('pRating');
+
+			var stillImg = results[i].images.fixed_height_still.url;
+			var animateImg = results[i].images.fixed_height.url;
+
 			var topicsImage = $('<img>');
-			topicsImage.attr('src', results[i].images.fixed_height.url);
+			topicsImage.addClass('emotionImg');
+			topicsImage.attr('src', stillImg);
+			topicsImage.attr('data-state', 'still');
+			topicsImage.attr('data-still', stillImg);
+			topicsImage.attr('data-animate', animateImg);
+
 			gifDiv.append(topicsImage);
 			gifDiv.append(p);
 			$('#gifsView').prepend(gifDiv);
@@ -45,9 +59,27 @@ $('#addGif').on('click', function(){
 	var newButton = $('#gif-input').val().trim();
 	topics.push(newButton);
 	renderButtons();
-	return false;
+	return false; 
 });
+
+function changeState(){
+	$('.emotionImg').on('click', function(){
+		var state = $(this).attr('data-state');
+		if(state === 'still'){
+			$(this).attr('data-state', 'animate');
+			$(this).attr('src', $(this).attr('data-animate'));
+		}
+		else if(state === 'animate'){
+			$(this).attr('data-state', 'still');
+			$(this).attr('src', $(this).attr('data-still'));
+		}
+	});
+}
 
 $(document).on('click', '.gif', displayGifInfo);
 
+$(document).on('click', '.emotionImg', changeState);
+
 renderButtons();
+
+}); //document.ready close
