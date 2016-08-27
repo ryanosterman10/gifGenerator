@@ -65,6 +65,7 @@ $('#addGif').on('click', function(){
 function changeState(){
 	$('.emotionImg').on('click', function(){
 		var state = $(this).attr('data-state');
+		console.log(state);
 		if(state === 'still'){
 			$(this).attr('data-state', 'animate');
 			$(this).attr('src', $(this).attr('data-animate'));
