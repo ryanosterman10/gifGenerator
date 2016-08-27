@@ -37,7 +37,6 @@ function displayGifInfo(){
 			$('#gifsView').prepend(gifDiv);
 		}
 
-
 	});
 
 }
@@ -62,27 +61,21 @@ $('#addGif').on('click', function(){
 	return false; 
 });
 
-function changeState(){
-	$('.emotionImg').on('click', function(){
-		var state = $(this).attr('data-state');
-		console.log(state);
-		if(state === 'still'){
-			$(this).attr('data-state', 'animate');
-			$(this).attr('src', $(this).attr('data-animate'));
+	$(document).on('click', '.emotionImg', function(){
+		var src = $(this).attr('src');
+		var still = $(this).attr('data-still');
+		var active = $(this).attr('data-animate');
+
+		if(src === still){
+			$(this).attr('src', active);
 		}
-		else if(state === 'animate'){
-			$(this).attr('data-state', 'still');
-			$(this).attr('src', $(this).attr('data-still'));
+		else if(src === active){
+			$(this).attr('src', still);
 		}
 	});
-}
 
 $(document).on('click', '.gif', displayGifInfo);
-
-$(document).on('click', '.emotionImg', changeState);
 
 renderButtons();
 
 }); //document.ready close
-
-
