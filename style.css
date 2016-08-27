@@ -45,7 +45,12 @@ div.container.well.text-center.secondBox{
 	border-radius: 5px;
 	margin-left: 10px;
 	color: black;
-	/*background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);*/
+}
+
+#addGif:hover{
+	background-image: url(https://media.giphy.com/media/d09xZLj1wgWuQ/giphy.gif);
+	background-size: cover;
+	background-position: center;
 }
 
 #info{
