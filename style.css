@@ -1,6 +1,6 @@
 body{
 	/*background-image: url(https://media.giphy.com/media/l0NhWBSOHAMN8wBoY/giphy.gif);*/
-	background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-11.jpg);
+	background-image: url(https://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/galaxy-wallpapers-11.jpg);
 	background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23,12 +23,14 @@ body{
 
 div.container.well.text-center{
 	margin-bottom: 30px;
+	border: 5px solid white;
 }
 
 div.container.well.text-center.secondBox{
 	margin-bottom: 100px;
 	max-height: 700px;
 	padding: 20px;
+	border: 5px solid white;
 	overflow: scroll;
 }
 
