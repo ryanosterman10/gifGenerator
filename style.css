@@ -44,7 +44,8 @@ div.container.well.text-center.secondBox{
 	font-size: 3em;
 	border-radius: 5px;
 	margin-left: 10px;
-	color: black;
+	color: white;
+	font-weight: bold;
 }
 
 #addGif:hover{
