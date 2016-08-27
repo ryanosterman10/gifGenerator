@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var topics = ['Awkward', 'Hungry', 'Tired', 'Sad', 'Bored'];
+var topics = ['Awkward', 'Hungry', 'Tired', 'Sad', 'Bored', 'Mind Blown'];
 
 function displayGifInfo(){
 
