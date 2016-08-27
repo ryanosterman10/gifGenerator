@@ -79,3 +79,4 @@ $(document).on('click', '.gif', displayGifInfo);
 renderButtons();
 
 }); //document.ready close
+
